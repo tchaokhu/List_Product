@@ -4,7 +4,6 @@
 <body>
     <button type="button" onclick="showProduct(products)">Click me to Show Product</button>
     <p id="demo"></p>
-    <img id="pic">
     <script>
         const products = [
             {
@@ -70,13 +69,12 @@
         ]
         let text = "<ul>";
         let x = document.getElementById("demo")
-        let y = document.getElementById("pic")
         products.forEach(showProduct);
         text += "</ul>";
         x.innerHTML = text;
 
         function showProduct(value) {
-            text += `<li>ID: ${value.id} Name: ${value.name} Price: ${value.price} <br><img src=${value.img}></li>`
+            text += `<li>ID: ${value.id} <br>Name: ${value.name} <br>Price: ${value.price} <br><img src=${value.img}></li>`
             
             if (x.style.display === "none") {
                 x.style.display = "block";
